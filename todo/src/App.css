@@ -1,5 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
+  padding: 30px 200px;
+}
+.App header {
   text-align: center;
+  border: 1px solid white;
+  background-color: lightgrey;
+}
+
+.App h2 {
+  font-size: 30px;
+  padding: 20px;
+}
+
+.todos h4 {
+  font-size: 18px;
+}
+
+.todo {
+  background-color: lightgrey;
+  padding: 20px;
+}
+
+.todoForm {
+  margin-bottom: 20px;
+}
+.todoForm input {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.todoForm button {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.todoForm .btn_danger {
+  background-color: rgb(250, 109, 109);
+  border: none;
+}
+.todoForm .btn_danger:hover {
+  color: rgb(250, 109, 109);
+  background: white;
+}
+
+.todoForm .btn_primary {
+  background-color: rgb(93, 207, 242);
+  border: none;
+}
+
+.todoForm .btn_primary:hover {
+  color: rgb(93, 207, 242);
+  background-color: white;
+}
+.addTodo {
+  width: 400px;
+  margin-right: 10px;
 }
 
 .completedTodo {

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import TodoForm from "./components/TodoForm";
 import { addNewTodo, toggleTodo, removeTodo } from "./actions";
 import "./App.css";
+import { ListGroupItem, Alert } from "reactstrap";
 
 class App extends Component {
   state = {
@@ -32,24 +33,29 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Todo List</h2>
-        <div>
+        <header>
+          <h2>Todo List</h2>
+
+          <TodoForm
+            newTodo={this.state.newTodo}
+            handleChanges={this.handleChanges}
+            addTodo={this.addTodo}
+            clearCompleted={this.clearCompleted}
+          />
+        </header>
+        <div className="todos">
           {this.props.todos.map((todo, index) => (
+            //<ListGroupItem>
             <h4
               onClick={e => this.toggleTodo(e, index)}
-              className={todo.completed ? "completedTodo" : "none"}
+              className={todo.completed ? "completedTodo" : ""}
               key={index}
             >
-              {todo.value}
+              <Alert color="success">{todo.value}</Alert>
             </h4>
+            //</ListGroupItem>
           ))}
         </div>
-        <TodoForm
-          newTodo={this.state.newTodo}
-          handleChanges={this.handleChanges}
-          addTodo={this.addTodo}
-          clearCompleted={this.clearCompleted}
-        />
       </div>
     );
   }
